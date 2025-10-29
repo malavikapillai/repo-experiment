@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sorting Visualizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">⚡ SortViz</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Algorithms</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTAINER -->
+  <div class="main-container">
+
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+
+      <!-- CONTROLS -->
+      <div class="controls-card">
+        <h2>Controls</h2>
+        <input id="arrayInput" placeholder="Enter numbers e.g. 5,3,8,1">
+        <button class="generate-btn" onclick="generateArrayFromInput()">Generate Bars</button>
+
+
+        <div class="algo-buttons">
+          <button onclick="selectAlgo('bubble')">Bubble Sort</button>
+          <button onclick="selectAlgo('selection')">Selection Sort</button>
+          <button onclick="selectAlgo('insertion')">Insertion Sort</button>
+          <button onclick="selectAlgo('merge')">Merge Sort</button>
+          <button onclick="selectAlgo('quick')">Quick Sort</button>
+          <button onclick="selectAlgo('heap')">Heap Sort</button>
+        </div>
+
+        <div class="play-buttons">
+          <button id="playBtn" onclick="playSteps()">▶️ Play</button>
+          <button id="nextBtn" onclick="nextStep()">⏭️ Next</button>
+          <button id="resetBtn" onclick="resetArray()">🔁 Reset</button>
+        </div>
+
+        <div class="legend-container">
+          <div class="legend-item"><span class="key compare"></span> Compare</div>
+          <div class="legend-item"><span class="key swap"></span> Swap / Assign</div>
+          <div class="legend-item"><span class="key pivot"></span> Pivot</div>
+          <div class="legend-item"><span class="key sorted"></span> Sorted</div>
+        </div>
+
+        <p id="status"></p>
+      </div>
+
+      <!-- Algorithm Details -->
+      <div class="algo-info-card">
+        <h2>Algorithm Details</h2>
+        <div id="algo-info">
+          <p>Select an algorithm to see details here.</p>
+        </div>
+      </div>
+
+      <!-- Step Viewer -->
+      <div class="step-info-card">
+        <h3>Step Viewer</h3>
+        <div id="step-info">No steps</div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+      <div id="bars"></div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
